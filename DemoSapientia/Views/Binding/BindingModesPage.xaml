@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoSapientia.Views.Binding.BindingModesPage"
+             Padding="10" Title="Binding Modes">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Labels Variable A" HorizontalOptions="CenterAndExpand" />
+                    <Button Text="Incrementar A" Command="{Binding IncrementarVariable}" CommandParameter="A"></Button>
+                    <Label Text="{Binding VariableA, StringFormat='El valor de A es:{0}'}"></Label>
+                    <Label Text="{Binding VariableA, StringFormat='El valor de A(OneWay) es:{0}', Mode=OneWay}"></Label>
+                    <Label Text="{Binding VariableA, StringFormat='El valor de A(OneTime) es:{0}', Mode=OneTime}"></Label>
+                </StackLayout>
+            </Frame>
+            <Label Text="OneWay Entry Variable A" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding VariableA, Mode=OneWay}"></Entry>
+            <Label Text="OneWayToSource entry Variable A" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding VariableA, Mode=OneWayToSource}"></Entry>
+            <Label Text="TwoWay entry Variable A" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding VariableA}"></Entry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

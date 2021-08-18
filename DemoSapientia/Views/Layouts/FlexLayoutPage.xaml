@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoSapientia.Views.Layouts.FlexLayoutPage">
+    <ContentPage.Content>
+        <FlexLayout VerticalOptions="Center">
+            <BoxView  HeightRequest="300" WidthRequest="300" BackgroundColor="Red" />
+            <BoxView  HeightRequest="300" WidthRequest="300" BackgroundColor="Blue" />
+            <BoxView  HeightRequest="300" WidthRequest="300" BackgroundColor="Yellow" />
+            <BoxView  HeightRequest="300" WidthRequest="300" BackgroundColor="Cyan" />
+            <BoxView  HeightRequest="300" WidthRequest="300" BackgroundColor="Green" />
+            <BoxView  HeightRequest="300" WidthRequest="300" BackgroundColor="RosyBrown" />
+            <BoxView  HeightRequest="300" WidthRequest="300" BackgroundColor="Brown" />
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

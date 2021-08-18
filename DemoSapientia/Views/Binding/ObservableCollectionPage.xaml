@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoSapientia.Views.Binding.ObservableCollectionPage"
+             Padding="10"
+             x:Name="rootElement">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Load Items" Command="{Binding LoadAllItemsCommand}"></Button>
+            <Label Text="Item Seleccionado" FontAttributes="Bold"></Label>
+            <Frame BindingContext="{Binding SelectedItem, Source={x:Reference list}}" >
+                <StackLayout VerticalOptions="FillAndExpand" HeightRequest="150" >
+                    <Label >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding Id, StringFormat='{0}-'}" FontAttributes="Bold"/>
+                                <Span Text="{Binding Text}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Description: " FontAttributes="Bold"/>
+                                <Span Text="{Binding Description}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
+            <Label Text="Lista de Items" FontAttributes="Bold"></Label>
+            <ListView x:Name="list" ItemsSource="{Binding Items}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="5" Padding="5">
+                                <Grid ColumnDefinitions="*,auto">
+                                    <Label Grid.Column="0" VerticalOptions="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Id, StringFormat='{0}-'}"/>
+                                                <Span Text="{Binding Text}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Frame Grid.Column="1"  BackgroundColor="OrangeRed" Padding="10">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding BindingContext.RemoveItemCommand, Source={x:Reference rootElement}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                        </Frame.GestureRecognizers>
+                                        <Label Text="Eliminar" VerticalOptions="Center"></Label>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
