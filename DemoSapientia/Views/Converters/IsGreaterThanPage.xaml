@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:converters="clr-namespace:DemoSapientia.Converters"
+             x:Class="DemoSapientia.Views.Converters.IsGreaterThanPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:GreaterThanConverter x:Key="GreaterThanConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnDefinitions="*,*">
+                <Frame BackgroundColor="MistyRose">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeValueCommand}" CommandParameter="-"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="-" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                </Frame>
+
+                <Frame Grid.Column="1" BackgroundColor="LightBlue">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeValueCommand}" CommandParameter="+"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="+" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                </Frame>
+            </Grid>
+            <Frame IsVisible="{Binding Variable, Converter={StaticResource GreaterThanConverter}, ConverterParameter=5}">
+                <Label Text="{Binding Variable, StringFormat='EL valor de la variable es: {0}'}" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

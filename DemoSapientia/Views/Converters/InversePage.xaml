@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:DemoSapientia.Converters"
+             x:Class="DemoSapientia.Views.Converters.InversePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="check"/>
+                    <Label Text="Toggle check" VerticalOptions="Center"></Label>
+                </StackLayout>
+            </Frame>
+            <Frame IsVisible="{Binding IsChecked, Source= {x:Reference check}, Converter={x:StaticResource InverseBooleanConverter}}" BackgroundColor="MistyRose">
+                <Label Text="Contenido 1" FontSize="24"></Label>
+            </Frame>
+            <Frame IsVisible="{Binding IsChecked, Source= {x:Reference check}}" BackgroundColor="LightGreen">
+                <Label Text="Contenido 2" FontSize="24"></Label>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

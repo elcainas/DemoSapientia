@@ -2,13 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DemoSapientia.Views.Layouts.GridPage"
+             xmlns:icons="clr-namespace:DemoSapientia.Constants"
              Title="Grid Layout">
     <ContentPage.Content>
             <Grid RowDefinitions="auto,auto,auto" VerticalOptions="Center">
                 <BoxView Grid.Row="0" HeightRequest="50" BackgroundColor="Red"></BoxView>
                 <BoxView Grid.Row="0" Grid.Column="1" HeightRequest="50" BackgroundColor="Blue"></BoxView>
-                <Label Grid.Row="1" Text="Welcome to Xamarin.Forms!"/>
-                <BoxView Grid.Row="1" Grid.Column="1" HeightRequest="50" BackgroundColor="Blue"></BoxView>
+            <Label Grid.Row="1">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static icons:IconFont.Account}" FontFamily="{StaticResource MaterialFontFamily}" TextColor="DarkCyan" FontSize="24"/>
+                        <Span Text="Nombre: " FontAttributes="Bold" FontSize="18"/>
+                        <Span Text="Jose Luis" FontSize="18"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <BoxView Grid.Row="1" Grid.Column="1" HeightRequest="50" BackgroundColor="Blue"></BoxView>
                 <BoxView Grid.Row="2" HeightRequest="50" BackgroundColor="Red"></BoxView>
                 <BoxView Grid.Row="2" Grid.Column="1" HeightRequest="50" BackgroundColor="Blue"></BoxView>
             </Grid>

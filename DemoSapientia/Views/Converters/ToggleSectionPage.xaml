@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converter="clr-namespace:DemoSapientia.Converters"
+             x:Class="DemoSapientia.Views.Converters.ToggleSectionPage"
+             Title="toggle">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BoolToMinimizeIconConverter x:Key="BoolToMinimizeIconConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ToggleCommand}"/>
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="*,auto">
+                    <Label Text="Titulo de la seccion" FontSize="24"/>
+                    <Image Grid.Column="1">
+                        <Image.Source>
+                            <FileImageSource File="{Binding IsVisible, Converter={x:StaticResource BoolToMinimizeIconConverter}}"/>
+                        </Image.Source>
+                    </Image>
+                </Grid>
+            </Frame>
+            <Frame IsVisible="{Binding IsVisible}">
+                <Label Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

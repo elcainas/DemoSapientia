@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="rootElement"
+             x:Class="DemoSapientia.UserControls.MenuOption">
+    <ContentView.Content>
+        <Frame Padding="8" HeightRequest="90" BindingContext="{Reference rootElement}">
+            <Grid ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Frame CornerRadius="40" Visual="Default" HasShadow="False" Padding="0" HeightRequest="80" WidthRequest="80" IsClippedToBounds="True" BackgroundColor="{StaticResource bCyanColor}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Grid.Column="0" Source="{Binding IconImageSource}" HeightRequest="40" WidthRequest="40" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                </Image>
+                </Frame>
+                <Label Grid.Column="1" VerticalOptions="Center" Text="{Binding Title}" TextColor="Black" FontSize="Large"></Label>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

@@ -8,6 +8,32 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
+            <!--BOOSTRAP COLORS-->
+            <Color x:Key="bPrimaryColor">#007bff</Color>
+            <Color x:Key="bIndigoColor">#6610f2</Color>
+            <Color x:Key="bPurpleColor">#6f42c1</Color>
+            <Color x:Key="bPinkColor">#e83e8c</Color>
+            <Color x:Key="bDangerColor">#dc3545</Color>
+            <Color x:Key="bOrangeColor">#fd7e14</Color>
+            <Color x:Key="bWarningCOlor">#ffc107</Color>
+            <Color x:Key="bSuccessColor">#28a745</Color>
+            <Color x:Key="bTealColor">#20c997</Color>
+            <Color x:Key="bCyanColor">#17a2b8</Color>
+
+            <Color x:Key="bWhiteColor">#ffffff</Color>
+            <Color x:Key="bLightColor">#f8f9fa</Color>
+            <Color x:Key="bGray-200Color">#e9ecef</Color>
+            <Color x:Key="bGray-300Color">#dee2e6</Color>
+            <Color x:Key="bGray-400Color">#ced4da</Color>
+            <Color x:Key="bGray-500Color">#adb5bd</Color>
+            <Color x:Key="bSecondaryColor">#868e96</Color>
+            <Color x:Key="bGray-700Color">#495057</Color>
+            <Color x:Key="bDarkColor">#343a40</Color>
+            <Color x:Key="bGray-900Color">#212529</Color>
+            <Color x:Key="bBlackColor">#000000</Color>
+            <!--END COLORS-->
+            <x:String x:Key="MaterialFontFamily" >materialdesignicons</x:String>
+
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">

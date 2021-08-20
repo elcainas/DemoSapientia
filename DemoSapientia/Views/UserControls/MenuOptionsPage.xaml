@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:DemoSapientia.UserControls"
+             xmlns:icons="clr-namespace:DemoSapientia.Constants"
+             x:Class="DemoSapientia.Views.UserControls.MenuOptionsPage"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+
+            <controls:MenuOption Title="Oficinas">
+                <!--<controls:MenuOption.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToOfficesCommand}"></TapGestureRecognizer>
+                </controls:MenuOption.GestureRecognizers>-->
+                <controls:MenuOption.IconImageSource>
+                    <FontImageSource Glyph="{x:Static icons:IconFont.Domain}" Size="60" Color="{StaticResource bPrimaryColor}" FontFamily="{StaticResource MaterialFontFamily}" />
+                </controls:MenuOption.IconImageSource>
+            </controls:MenuOption>
+
+            <controls:MenuOption Title="Citas">
+                <controls:MenuOption.IconImageSource>
+                    <FontImageSource Glyph="{x:Static icons:IconFont.CalendarMonth}" Size="60" Color="{StaticResource bWhiteColor}" FontFamily="{StaticResource MaterialFontFamily}" />
+                </controls:MenuOption.IconImageSource>
+            </controls:MenuOption>
+            <controls:MenuOption Title="Elegibilidad">
+                <controls:MenuOption.IconImageSource>
+                    <FontImageSource Glyph="{x:Static icons:IconFont.AccountCheck}" Size="60" Color="{StaticResource bWhiteColor}" FontFamily="{StaticResource MaterialFontFamily}" />
+                </controls:MenuOption.IconImageSource>
+            </controls:MenuOption>
+            <controls:MenuOption Title="Tarjeta Virtual">
+                <controls:MenuOption.IconImageSource>
+                    <FontImageSource Glyph="{x:Static icons:IconFont.CardAccountDetails}" Size="60" Color="{StaticResource bPrimaryColor}" FontFamily="{StaticResource MaterialFontFamily}" />
+                </controls:MenuOption.IconImageSource>
+            </controls:MenuOption>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
